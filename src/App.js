@@ -24,6 +24,7 @@ function App() {
           <Route path="/home">
             <Redirect to="/" />
           </Route>
+          <Route path="*" component={NotFound} />
         </Switch>
       </Router>
     </div>
