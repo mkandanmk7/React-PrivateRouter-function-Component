@@ -4,9 +4,15 @@ import { NavLink } from "react-router-dom";
 export const Header = () => {
   return (
     <div>
-      <NavLink to="/home">Home</NavLink>
-      <NavLink to="/posts">Posts</NavLink>
-      <NavLink to="/about">About</NavLink>
+      <NavLink exact activeStyle={{ color: "Red" }} to="/">
+        Home
+      </NavLink>
+      <NavLink activeStyle={{ color: "red" }} to="/posts">
+        Posts
+      </NavLink>
+      <NavLink activeStyle={{ color: "Red" }} to="/about">
+        About
+      </NavLink>
     </div>
   );
 };
