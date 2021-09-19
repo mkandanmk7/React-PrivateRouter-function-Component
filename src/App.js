@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { Header } from "./Components/Header";
 import { PrivateRouter } from "./Components/PrivateRouter";
+import { PrivateRoute } from "./Components/PrivateRoute";
 
 function App() {
   return (
@@ -20,7 +21,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route path="/posts" component={Posts} />
+          <PrivateRoute path="/posts" component={Posts} />
           <Route path="/about" component={About} />
           {/*  component={About} = render={()=> return <About/>} render ={} gives component  */}
 
@@ -30,7 +31,9 @@ function App() {
           {/* Normal Route  */}
           {/* <Route path="/private" component={PrivateRouter} /> */}
           {/* Route with render={} for protection private */}
-          <Route
+
+          {/* Normal private Route for one specific comp*/}
+          {/* <Route
             path="/private"
             render={() => {
               const isLoggedIn = localStorage.getItem("isLoggedIn");
@@ -43,7 +46,11 @@ function App() {
                 </p>
               );
             }}
-          />
+          /> */}
+
+          {/* common function private Route */}
+          <PrivateRoute path="/private" component={PrivateRouter} />
+
           <Route path="*" component={NotFound} />
           {/* Route gives us render() it will for private purpose: */}
         </Switch>
