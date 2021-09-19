@@ -39,7 +39,7 @@ function App() {
                 <PrivateRouter />
               ) : (
                 <p>
-                  <b>Page is Secured</b>
+                  Page is Secured ... <b>Please Login !</b>
                 </p>
               );
             }}
