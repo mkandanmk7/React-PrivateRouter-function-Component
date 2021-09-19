@@ -6,13 +6,18 @@ export const PrivateRoute = ({ path, component: Component }) => {
   return (
     <Route
       path={path}
-      render={() => {
+      render={({ history, Name, Course, Institute }) => {
         const isLoggedIn = localStorage.getItem("isLoggedIn");
         return isLoggedIn ? (
-          <Component />
+          <Component
+            history={history}
+            Name="Muthu"
+            Course="Full Stack Web Developer"
+            Institute="Guvi"
+          />
         ) : (
           <p>
-            Please <b>Login</b> Private component!{" "}
+            Please <b>Login</b> Private component!
           </p>
         );
       }}

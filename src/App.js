@@ -22,16 +22,17 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <PrivateRoute path="/posts" component={Posts} />
-          <Route
+          <PrivateRoute
             path="/about"
-            render={(props) => (
-              <About
-                history={props.history}
-                Name="Muthu"
-                Course="Full Stack Web Developer"
-                Institute="Guvi"
-              />
-            )}
+            component={About}
+            // render={(props) => (
+            //   <About
+            //     history={props.history}
+            //     Name="Muthu"
+            //     Course="Full Stack Web Developer"
+            //     Institute="Guvi"
+            //   />
+            // )}
           />
           {/*  component={About} = render={()=> return <About/>} render ={} gives component  */}
 
