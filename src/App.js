@@ -11,7 +11,7 @@ import {
 } from "react-router-dom";
 import { Header } from "./Components/Header";
 import { PrivateRouter } from "./Components/PrivateRouter";
-import { PrivateRoute } from "./Components/PrivateRoute";
+import { AuthRoute } from "./Components/PrivateRoute";
 
 function App() {
   return (
@@ -21,8 +21,8 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={Home} />
-          <PrivateRoute path="/posts" component={Posts} />
-          <PrivateRoute
+          <AuthRoute path="/posts" component={Posts} />
+          <AuthRoute
             path="/about"
             component={About}
             // render={(props) => (
@@ -60,7 +60,7 @@ function App() {
           /> */}
 
           {/* common function private Route */}
-          <PrivateRoute path="/private" component={PrivateRouter} />
+          <AuthRoute path="/private" component={PrivateRouter} />
 
           <Route path="*" component={NotFound} />
           {/* Route gives us render() it will for private purpose: */}

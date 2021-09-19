@@ -2,7 +2,7 @@ import React from "react";
 
 import { Route } from "react-router-dom";
 
-export const PrivateRoute = ({ path, component: Component }) => {
+export const AuthRoute = ({ path, component: Component }) => {
   return (
     <Route
       path={path}
